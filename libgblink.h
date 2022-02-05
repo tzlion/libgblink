@@ -1,5 +1,3 @@
-#define GBLINK_EXPORTS
-
 #ifdef GBLINK_EXPORTS
 #define GBLINK_API __declspec(dllexport)
 #else
@@ -15,14 +13,6 @@ extern "C"
 
 typedef unsigned char U8;
 typedef unsigned short U16;
-
-#define LPTREG_DATA 0x378
-#define LPTREG_STATUS (LPTREG_DATA + 1)
-#define LPTREG_CONTROL (LPTREG_DATA + 2)
-
-#define STATUS_BUSY 0x80
-#define CTL_MODE_DATAIN 0x20
-#define D_CLOCK_HIGH 0x02
 
 typedef void(*LinkerLogger)(const char*);
 

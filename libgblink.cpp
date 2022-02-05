@@ -2,7 +2,6 @@
   SIMPLIFIED GBLINK IMPLEMENTATION
   Based on: original gblinkdl by Brian Provinciano
   Modified gblinkdx by taizou
-  (this file is not strictly GPL it's just whatever sorry)
 */
 
 #include "libgblink.h"
@@ -11,6 +10,14 @@
 #include "string.h"
 
 #include "windows.h"
+
+#define LPTREG_DATA 0x378
+#define LPTREG_STATUS (LPTREG_DATA + 1)
+#define LPTREG_CONTROL (LPTREG_DATA + 2)
+
+#define STATUS_BUSY 0x80
+#define CTL_MODE_DATAIN 0x20
+#define D_CLOCK_HIGH 0x02
 
 using namespace std;
 
