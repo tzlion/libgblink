@@ -102,7 +102,7 @@ void gb_sendblockread(U16 addr, U16 length)
     gb_sendbyte(length&0xFF);
 }
 
-void GBLINK_CALL readBlock(U8 *dest, U16 addr, int len)
+void GBLINK_CALL ReadBlock(U8 *dest, U16 addr, int len)
 {
     logMessage(msg);
     gb_sendblockread(addr,len);
@@ -110,13 +110,13 @@ void GBLINK_CALL readBlock(U8 *dest, U16 addr, int len)
         dest[i] = gb_readbyte();
 }
 
-U8 GBLINK_CALL readByte(U16 addr)
+U8 GBLINK_CALL ReadByte(U16 addr)
 {
     gb_sendblockread(addr,1);
     return gb_readbyte();
 }
 
-void GBLINK_CALL writeByte(U16 addr, U8 val)
+void GBLINK_CALL WriteByte(U16 addr, U8 val)
 {
     gb_sendwrite(addr, val);
 }
@@ -130,7 +130,7 @@ void readBankZero()
     }
 }
 
-bool GBLINK_CALL initLinker()
+bool GBLINK_CALL InitLinker()
 {
     if (linkerInitialising) {
         logMessage("Already initialising");
@@ -206,7 +206,7 @@ bool GBLINK_CALL initLinker()
     return true;
 }
 
-void GBLINK_CALL deinitLinker() {
+void GBLINK_CALL DeinitLinker() {
     if (linkerInitialising) {
         return;
     }
@@ -218,19 +218,19 @@ void GBLINK_CALL deinitLinker() {
     logMessage("Disconnected");
 }
 
-void GBLINK_CALL setLogger(LinkerLogger newlogger) {
+void GBLINK_CALL SetLogger(LinkerLogger newlogger) {
     logger = newlogger;
     logMessage("Setup logger");
 }
 
-bool GBLINK_CALL isLinkerActive() {
+bool GBLINK_CALL IsLinkerActive() {
     return linkerActive;
 }
 
-bool GBLINK_CALL isLinkerInitialising() {
+bool GBLINK_CALL IsLinkerInitialising() {
     return linkerInitialising;
 }
 
-U8* GBLINK_CALL getBank0() {
+U8* GBLINK_CALL GetBank0() {
     return bank0;
 }
