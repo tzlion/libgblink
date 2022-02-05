@@ -148,7 +148,7 @@ bool GBLINK_CALL initLinker()
         return false;
     }
 
-    logMessage("GBlinkDX client adaptation for hhugboy");
+    logMessage("LibGBlink");
     logMessage("Based on original GBlinkdl by Brian Provinciano & GBlinkDX by taizou");
 
     logMessage("Setting up ports...");
