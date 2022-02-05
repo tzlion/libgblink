@@ -19,6 +19,8 @@
 #define CTL_MODE_DATAIN 0x20
 #define D_CLOCK_HIGH 0x02
 
+#define LIB_VERSION "0.1.0"
+
 using namespace std;
 
 U8 bank0[0x4000];
@@ -155,7 +157,8 @@ bool GBLINK_CALL InitLinker()
         return false;
     }
 
-    logMessage("LibGBlink");
+    sprintf(msg, "LibGBlink %s", LIB_VERSION);
+    logMessage(msg);
     logMessage("Based on original GBlinkdl by Brian Provinciano & GBlinkDX by taizou");
 
     logMessage("Setting up ports...");
