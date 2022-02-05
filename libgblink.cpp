@@ -5,7 +5,7 @@
   (this file is not strictly GPL it's just whatever sorry)
 */
 
-#include "library.h"
+#include "libgblink.h"
 
 #include "stdio.h"
 #include "string.h"
