@@ -227,10 +227,6 @@ bool GBLINK_CALL IsLinkerActive() {
     return linkerActive;
 }
 
-bool GBLINK_CALL IsLinkerInitialising() {
-    return linkerInitialising;
-}
-
 U8* GBLINK_CALL GetBank0() {
     return bank0;
 }
